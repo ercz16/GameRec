@@ -1,0 +1,192 @@
+.Form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-width: 30vw;
+    min-height: 60vh;
+    background-color: white;
+    background: rgba(255, 255, 255, .60);
+    padding:50px 5px 50px 20px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px 4px rgba(0, 0, 0, 0.2);
+}
+
+.Title {
+    font-size: x-large;
+    font-weight: bold;
+    color: rgb(49, 5, 193);
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+        typing 2.5s steps(40, end),
+        blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 60% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+}
+
+.Category {
+    width: fit-content;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.Label {
+    margin-bottom: 10px;
+    font-weight: bolder;
+}
+
+.Checkbox-Container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 20vw;
+}
+
+.Checkbox-Column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.Price-Range {
+    width: 100%;
+    padding: 5px 5px 5px 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.Rangebox {
+    width: 40px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.Online-Button-Wrap {
+    display: flex;
+    flex-direction: row;
+}
+
+.Online-Button {
+    padding: 5px 5px 5px 5px;
+    margin-right: 15px;
+    border-radius: 10px;
+}
+
+.Online-Button:hover {
+    opacity: 70%;
+}
+
+.Submit-Block {
+    margin-top: 30px;
+}
+
+.Submit {
+    background-color: rgb(254, 250, 5);
+    border-radius: 7px;
+   
+    padding: 8px 10px 8px 10px;
+    margin-top: 10px;
+    font-weight: bolder;
+
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+.Submit:hover {
+    background-color: rgb(233, 239, 108);
+}
+
+.Game-List {
+    margin: 20px 20px 0px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Game-List-Title {
+    margin-bottom: 20px;
+    font-size: large;
+    font-weight: bolder;
+}
+
+.Grid {
+    display: grid;
+    grid-template-columns: 6fr 6fr 6fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    justify-items: stretch;
+    align-items: stretch;
+ }
+
+.Card-Style {
+    background-color: white;
+    border-radius: 7px;
+}
+
+.My-Card-Title {
+    font-size: medium;
+}
+
+.Data-Point {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    margin: 10px 20px 10px 20px;
+    padding: 5px 5px 5px 5px;
+    border-radius: 7px;
+}
+
+.Back-Button-1 {
+    min-width: 10%;
+    padding: 10px 10px 10px 10px;
+    font-size: medium;
+    font-weight: bolder;
+    border-radius: 7px;
+    background-color: rgb(254, 250, 5);
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.Back-Button-2 {
+    min-width: 10%;
+    padding: 10px 10px 10px 10px;
+    font-size: medium;
+    font-weight: bolder;
+    border-radius: 7px;
+    background-color: rgb(254, 250, 5);
+    margin-top: 40px;
+}
+
+.Back-Button-1:hover {
+    background-color: rgb(233, 239, 108);;
+}
+
+.Back-Button-2:hover {
+    background-color: rgb(233, 239, 108);;
+}

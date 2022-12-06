@@ -1,0 +1,15 @@
+body {
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: linear-gradient(to right, #09e2f1 , #a942d9);
+  min-width: 100vw;
+  min-height: 100vh;
+}
