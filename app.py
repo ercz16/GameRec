@@ -1,6 +1,9 @@
 from flask import Flask, request, jsonify, make_response
 from flask_cors import CORS
 import json
+from shellsort import shellsort
+from tim_sort import tim_sort
+import copy
 
 app = Flask(__name__)
 CORS(app)
@@ -8,29 +11,38 @@ CORS(app)
 with open("video_games.json", "r") as f:
     game_data = json.loads(f.read())
 
-@app.route("/test", methods=['GET'])
-def test():
-    data = {
-        'name': 'eric'
-    }
-    response = make_response(data)
-    # response.headers.add("Access-Control-Allow-Origin", "*")
-    # response.headers.add("Access-Control-Allow-Headers", "*")
-    # response.headers.add("Access-Control-Allow-Methods", "*")
-    return response
+@app.route("/shellsort", methods=['GET', 'POST'])
+def get_shell_sort():
+    print("shellsort")
+    # Receive payload
+    payload = json.loads(request.data.decode('utf-8'))
+
+    # Destructure payload + tuple conversions
+    genres = payload['genres']
+    priceRange = tuple(payload['priceRange'])
+    timeRange = tuple(payload['timeRange'])
+    online = payload['online']
+
+    # Load copy of game_data
+    copy_data = copy.deepcopy(game_data)
+    return shellsort(genres, priceRange, timeRange, online, copy_data)
 
 
-@app.route("/rec", methods=['GET', 'POST'])
-def recommendations():
-    data = json.loads(request.data.decode('utf-8'))
-    new_data = {
-        'fullName': data['name'] + " zhou",
-        'newAge': data['age'] + 5,
-    }
-    game = game_data[0]
-    print(game['Title'])
-    print(game['Metadata'])
-    return new_data
+@app.route("/timsort", methods=['GET', 'POST'])
+def get_tim_sort():
+    print("timsort")
+    # Receive payload
+    payload = json.loads(request.data.decode('utf-8'))
+
+    # Destructure payload + tuple conversions
+    genres = payload['genres']
+    priceRange = tuple(payload['priceRange'])
+    timeRange = tuple(payload['timeRange'])
+    online = payload['online']
+
+    # Load copy of game_data
+    copy_data = copy.deepcopy(game_data)
+    return tim_sort(copy_data, genres, priceRange, timeRange, online)
     
 
 if __name__ == '__main__':
