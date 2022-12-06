@@ -21,8 +21,8 @@ const Form = () => {
         "Role-Playing (RPG)": false,
         "Educational": false,
     })
-    const [priceRange, setPriceRange] = useState([0, 99])
-    const [timeRange, setTimeRange] = useState([0, 999])
+    const [priceRange, setPriceRange] = useState([0, 60])
+    const [timeRange, setTimeRange] = useState([0, 40])
     const [online, setOnline] = useState(2)
 
     const [submitted, setSubmitted] = useState(false)
@@ -49,6 +49,22 @@ const Form = () => {
         else
             newArr[pos] = parseInt(val)
         setTimeRange(newArr)
+    }
+
+    const resetState = () => {
+        setChecked({
+            "Action": false,
+            "Racing / Driving": false,
+            "Strategy": false,
+            "Sports": false,
+            "Simulation": false,
+            "Adventure": false,
+            "Role-Playing (RPG)": false,
+            "Educational": false,
+        })
+        setPriceRange([0, 60])
+        setTimeRange([0, 40])
+        setOnline(2)
     }
 
     const selectedButton = {
@@ -85,6 +101,7 @@ const Form = () => {
             // Set data to state and display results
             setData(res)
             setSubmitted(true)
+            resetState()
 
         } catch(error) {
             console.error(error)
